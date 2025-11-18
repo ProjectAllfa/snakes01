@@ -13,8 +13,8 @@ function getBotImagePath(botName) {
 async function loadBotNames() {
     try {
         const [botNamesResponse, walletsResponse] = await Promise.all([
-            fetch('/bot_names.json'),
-            fetch('/landing/public_wallets.json')
+            fetch('bot_names.json'),
+            fetch('public_wallets.json')
         ]);
         
         const botNames = await botNamesResponse.json();
@@ -178,4 +178,5 @@ loadBotNames().then(() => {
     initCopyButtons();
 });
 initHowItWorks();
+
 
